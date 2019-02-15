@@ -11,10 +11,12 @@ h1 {
 }
 div.card {
   margin: 5px;
-  background-color: grey;
+  background-color: #e2e2e2;
   /* height: 100px; */
   width: 30%;
   float: left;
+  /* border: 1px groove; */
+  border-radius: 3px;
 }
 div.card:hover {
   background-color: yellow;
@@ -22,3 +24,21 @@ div.card:hover {
 /* .hidden {
   visibility: hidden;
 } */
+p.theme {
+  font-weight: bold;
+  text-align: center;
+  margin: 10px;
+  /* font-style: italic; */
+}
+p.content {
+  text-align: center;
+  margin: 8px;
+}
+/*
+colors
+#33edf8 //blue
+#f32e62 //red
+#ffff3a //yellow
+#33f8c8 //green
+#e2e2e2 //grey
+*/
