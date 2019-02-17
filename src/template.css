@@ -9,36 +9,43 @@ h1 {
   flex-wrap: wrap;
   justify-content: center; */
 }
-div.card {
-  margin: 5px;
-  background-color: #e2e2e2;
-  /* height: 100px; */
+.colomn {
   width: 30%;
   float: left;
-  /* border: 1px groove; */
+}
+.card {
+  margin: 5px;
   border-radius: 3px;
+  height: auto;
 }
-div.card:hover {
-  background-color: yellow;
-}
-/* .hidden {
-  visibility: hidden;
-} */
 p.theme {
   font-weight: bold;
   text-align: center;
   margin: 10px;
-  /* font-style: italic; */
+  padding-top: 5px;
 }
 p.content {
   text-align: center;
-  margin: 8px;
+  margin: 5px;
 }
-/*
-colors
-#33edf8 //blue
-#f32e62 //red
-#ffff3a //yellow
-#33f8c8 //green
-#e2e2e2 //grey
-*/
+.card.blue {
+  background-color: #33edf8;
+}
+.card.red {
+  background-color: #f32e62;
+}
+.card.yellow {
+  background-color: #ffff3a;
+}
+.card.green {
+  background-color: #33f8c8;
+}
+.card.grey {
+  background-color: #e2e2e2;
+}
+.card:hover {
+  background-color: orange;
+}
+.hidden {
+  display: none;
+}

@@ -1,6 +1,8 @@
 import init from './init';
+import events from './events';
+/* eslint-disable */
 import css from './template.css';
-import click from './click';
+/* eslint-enable */
 
 init();
-click();
+events();
