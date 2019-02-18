@@ -10,26 +10,6 @@ const translationOff = (element) => {
 };
 
 export default () => {
-  // const main = document.getElementById('main');
-  // main.addEventListener('click', ({ target }) => {
-  //   console.log(target);
-  //   const div = target.parentElement;
-  //   if (div.classList.contains('card')) {
-  //     // console.log(div.getAttribute('id'), state[div.getAttribute('id')]);
-  //   // проверяем состояние, если showTranslation = false работаем, иначе ничего не делаем
-  //     const current = state.indexOf(element =>
-  //       element.id === div.getAttribute('id'));
-  //     console.log(current);
-  //   }
-  // });
-  // main.addEventListener('dblclick', ({ target }) => {
-  //   const div = target.parentElement;
-  //   if (div.classList.contains('card')) {
-  //     div.remove();
-  //   }
-  // });
-
-  // отказался от более простого кода из-за худшей производительности
   const cards = document.querySelectorAll('div.card');
 
   cards.forEach((card) => {
