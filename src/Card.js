@@ -6,7 +6,6 @@ export default class Card {
     this.sourceText = phrase.sourceText;
     this.translation = phrase.translation;
     this.color = color;
-    this.length = this.theme.length + this.sourceText.length;
     this.showTranslation = false;
     this.position = position;
   }
@@ -24,9 +23,7 @@ export default class Card {
     const translation = document.createElement('p');
     translation.classList.add('translation', 'content', 'hidden');
     translation.textContent = this.translation;
-    const length = document.createElement('div');
-    length.textContent = this.length;
-    div.append(theme, sourceText, translation, length);
+    div.append(theme, sourceText, translation);
     return div;
   }
 }

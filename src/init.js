@@ -37,16 +37,7 @@ export const state = shuffle(phrases).map((phrase, i) => {
     // row: i,
   };
   return new Card(phrase, colors[getRandomInt(0, colors.length - 1)], i, position);
-})
-  .sort((a, b) => {
-    if (a.position.colomn === b.position.colomn && a.length > b.length) {
-      return -1;
-    }
-    if (a.position.colomn === b.position.colomn && a.length < b.length) {
-      return 1;
-    }
-    return 0;
-  });
+});
 
 export default () => {
   state.forEach((card) => {
@@ -54,17 +45,26 @@ export default () => {
     const colomn = document.getElementById(`col${colomnNumber}`);
     colomn.append(card.render());
   });
-  // for (let i = 0; phrases.length > i; i += 1) {
-  //   const current = phrases[i];
-  //
-  //   const color = colors[getRandomInt(0, colors.length)];
-  //   const card = new Card(current, color);
-  //
-  //   const colomnNumber = getRandomInt(1, 3);
-  //   const colomn = document.getElementById(`col${colomnNumber}`);
-  //
-  //   colomn.append(card.init());
-  // }
-  // const colomns = document.querySelectorAll('span.colomn');
-  // colomns.forEach(sortChildrenByLength);
+
+  // sorting colomns
+  const calcLength = (card) => {
+    const theme = card.querySelector('p.theme').textContent;
+    const sourceText = card.querySelector('p.sourceText').textContent;
+    return theme.length + sourceText.length;
+  };
+
+  const colomns = document.querySelectorAll('.colomn');
+  colomns.forEach((colomn) => {
+    const clone = colomn.cloneNode();
+    [...colomn.children].sort((a, b) => {
+      if (calcLength(a) > calcLength(b)) {
+        return -1;
+      }
+      if (calcLength(a) < calcLength(b)) {
+        return 1;
+      }
+      return 0;
+    }).forEach(child => clone.append(child));
+    colomn.replaceWith(clone);
+  });
 };
