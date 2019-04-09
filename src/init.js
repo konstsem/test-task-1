@@ -43,7 +43,7 @@ export default () => {
   state.forEach((card) => {
     const colomnNumber = card.position.colomn;
     const colomn = document.getElementById(`col${colomnNumber}`);
-    colomn.append(card.render());
+    card.render(colomn);
   });
 
   // sorting colomns
