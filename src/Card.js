@@ -9,21 +9,18 @@ export default class Card {
     this.showTranslation = false;
     this.position = position;
   }
-  render() {
-    const div = document.createElement('div');
-    div.setAttribute('id', this.id);
-    div.classList.add('card', this.color);
-    const theme = document.createElement('p');
-    theme.classList.add('theme');
-    theme.textContent = this.theme;
-    const sourceText = document.createElement('p');
-    sourceText.classList.add('sourceText', 'content');
-    sourceText.textContent = this.sourceText;
-    sourceText.hidden = false;
-    const translation = document.createElement('p');
-    translation.classList.add('translation', 'content', 'hidden');
-    translation.textContent = this.translation;
-    div.append(theme, sourceText, translation);
-    return div;
+  render(parent) {
+    const html = `<div id=${this.id} class=" card ${this.color}">
+        <p class="theme">
+          ${this.theme}
+        </p>
+        <p class="sourceText content">
+          ${this.sourceText}
+        </p>
+        <p class="translation content hidden">
+          ${this.translation}
+        </p>
+      </div>`;
+    parent.insertAdjacentHTML('beforeend', html);
   }
 }
